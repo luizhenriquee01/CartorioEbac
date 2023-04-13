@@ -158,8 +158,9 @@ int main()//função principal sempre vai ser chamada primeiro
 		    printf("\t1 - Registrar nomes\n");
            	printf("\t2 - Consultar nomes\n");
        	    printf("\t3 - Deletar nomes\n");
-           	printf("Opção: ");//fim do menu
+           	printf("\t4 - Sair do sistema\n");
           	
+          	printf("Opção: ");//fim do menu
            	scanf("%d", &opcao);//armazenando a escolha do usuário//armazenar a variavel (opção)o valor que o cliente vai digitar
            	
        	    system("cls");//limpar a tela
@@ -176,6 +177,11 @@ int main()//função principal sempre vai ser chamada primeiro
 		 	        
 				case 3: 
 				deletar();
+            	break;
+            	
+            	case 4:
+            	printf("Obrigado por utilizar o sistema!\n");
+            	return 0;
             	break;
             		    
             	default:printf("Essa opção não está disponível\n");
