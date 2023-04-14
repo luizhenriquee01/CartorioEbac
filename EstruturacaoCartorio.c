@@ -3,6 +3,7 @@
 #include <locale.h> //biblioteca de alocação de texto por região
 #include <string.h> //biblioteca responsavel por cuidar das strings
 
+
 int registro()//função responsavel por cadastrar os usuários no sistema
 
 {
@@ -21,7 +22,7 @@ int registro()//função responsavel por cadastrar os usuários no sistema
 	
 	FILE *file;  //Voce vai procurar nas nossas bibliotecas, alguma estrutura que se chama file, pq vamos criar um arquivo //FILE já existe no sistema//file é oq criamos/cria arquivo
 	file = fopen(arquivo, "w");//arquivo novo//cria o arquivo //"w" vai escrever
-	file = fopen(arquivo, "a");
+	
 	fprintf(file, " CPF: ");
 	fprintf (file,cpf); //o mesmo printf, porem ele está salvando no arquivo//salva o valor da variavel
 	fclose(file); //temos que fechar o arquivo//fecha o arquivo
@@ -135,6 +136,7 @@ int deletar()
 		printf("O usuário não se encontra no sistema!.\n");
 		system("pause");
 	}
+
 	
 }
 
