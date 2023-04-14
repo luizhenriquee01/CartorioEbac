@@ -124,7 +124,7 @@ int deletar()
 	scanf("%s",cpf); //ele vai varrer tudo oq o usuário digitar, e vai salvar tudo oq a gente pedir//provem da biblioteca//salvar dentro da variavel
 
 	
-	remove(cpf);   //muito cuidado, conforme dito anteriormente//pode dar um problemão//***criar depois uma função replay***	
+	remove(cpf);   //muito cuidado, conforme dito anteriormente//pode dar um problemão//***criar depois uma função replay***	s
    
    
 	FILE *file;
@@ -143,54 +143,75 @@ int deletar()
 
 int main()//função principal sempre vai ser chamada primeiro
     {
-    	int opcao=0;//Definindo variáveis //= igual a atribuição
-          	
+    	int opcao=0;//Definindo variáveis //= igual a atribuição    	
        	int laco=1;
-          	
-       	for(laco=1;laco=1;)
+       	char login[15] = "10";
+       	char login1[15];
+       	char senha[15] = "10";
+       	char senha1[15];
+       	
+       	printf("### Cartório da EBAC ###\n\n");
+       	printf("Login de administrador!\n\n");
+		printf("Digite o seu login: ");
+		scanf("%s", login1);
+		printf ("Digite a sua senha: ");
+       	scanf("%s", senha1);
+       	
+       	if(strcmp(login,login1) == 0 && strcmp(senha, senha1) == 0)
+       	    
        	{
-          	system("cls");//responsável por limpar a tela
+ 
+          	system("cls");
+        	for(laco=1;laco=1;)
+        	{
+            	system("cls");//responsável por limpar a tela
 
-           	setlocale(LC_ALL,"Portuguese");//Definindo a linguagem
+            	setlocale(LC_ALL,"Portuguese");//Definindo a linguagem
           	
-           	printf("### Cartório da EBAC ###\n\n");//Inicio de Menu
+            	printf("### Cartório da EBAC ###\n\n");//Inicio de Menu
           	
-	    	printf("Escolha a opção desejada do menu:\n\n");
-          	
-		    printf("\t1 - Registrar nomes\n");
-           	printf("\t2 - Consultar nomes\n");
-       	    printf("\t3 - Deletar nomes\n");
-           	printf("\t4 - Sair do sistema\n");
-          	
-          	printf("Opção: ");//fim do menu
-           	scanf("%d", &opcao);//armazenando a escolha do usuário//armazenar a variavel (opção)o valor que o cliente vai digitar
+	        	printf("Escolha a opção desejada do menu:\n\n");
            	
-       	    system("cls");//limpar a tela
-          	    
-            switch(opcao)//inicio da seleção do menu
-            {
-  				case 1: 
-		    	registro();//chamada das funções
-		 	   	break;        	       	
+		        printf("\t1 - Registrar nomes\n");
+            	printf("\t2 - Consultar nomes\n");
+        	    printf("\t3 - Deletar nomes\n");
+            	printf("\t4 - Sair do sistema\n");
+           	
+            	printf("Opção: ");//fim do menu
+            	scanf("%d", &opcao);//armazenando a escolha do usuário//armazenar a variavel (opção)o valor que o cliente vai digitar
+           	
+       	        system("cls");//limpar a tela
+           	    
+                switch(opcao)//inicio da seleção do menu
+               {
+  		    		case 1: 
+		         	registro();//chamada das funções
+	    	 	   	break;        	       	
 
-				case 2: 
-			    consulta();
-		 	    break;
+			    	case 2: 
+	     		    consulta();
+		    	    break;
 		 	        
-				case 3: 
-				deletar();
-            	break;
+		    		case 3: 
+		    		deletar();
+                	break;
             	
-            	case 4:
-            	printf("Obrigado por utilizar o sistema!\n");
-            	return 0;
-            	break;
+                	case 4:
+                	printf("Obrigado por utilizar o sistema!\n");
+                	return 0;
+                	break;
             		    
-            	default:printf("Essa opção não está disponível\n");
-            	system("pause");
-            	break;
-			        	
-			}
-		}//fim da seleção 
-    } 
+                	default:printf("Essa opção não está disponível\n");
+                	system("pause");
+                	break;
+    	    	}//fim da seleção 
+		    }	  
+	  	}else
+            printf("\n\nSenha Incorreta!\n\n");
+        }
+
+
+  
+  
+ 
 
