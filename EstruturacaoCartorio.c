@@ -7,7 +7,7 @@
 int registro()//função responsavel por cadastrar os usuários no sistema
 
 {
-	//inicio croação de variáveis/string
+	//inicio criação de variáveis/string
 	char arquivo[40];
 	char cpf [40];
 	char nome [40];
@@ -89,7 +89,7 @@ int consulta()
 	char conteudo[200];
 	
 	
-	printf("Digite o CPF a ser consultado: ");
+	printf("Digite o CPF a ser consultado: ");//recebendo qual usuário vai ser consultado
 	scanf("%s", cpf);
 	
 	
@@ -124,9 +124,6 @@ int deletar()
 	scanf("%s",cpf); //ele vai varrer tudo oq o usuário digitar, e vai salvar tudo oq a gente pedir//provem da biblioteca//salvar dentro da variavel
 
 	
-	remove(cpf);   //muito cuidado, conforme dito anteriormente//pode dar um problemão//***criar depois uma função replay***	s
-   
-   
 	FILE *file;
 	file = fopen(cpf, "r");//função de abrir//ler esse arquivo CPF
 
@@ -137,7 +134,19 @@ int deletar()
 		system("pause");
 	}
 
-	
+		else //Atualizando a função remove, //caso delete o usuário dê esta mensagem
+	{
+		fclose(file);
+		remove(cpf);  //muito cuidado, conforme dito anteriormente//pode dar um problemão//***criar depois uma função replay***	s
+		FILE *file;	
+		file = fopen(cpf,"r");
+		if(file == NULL)
+		{
+			printf("Usuário deletado com sucesso!.\n");
+			system("pause");
+		}
+	}
+	fclose(file);
 }
 
 
@@ -145,19 +154,21 @@ int main()//função principal sempre vai ser chamada primeiro
     {
     	int opcao=0;//Definindo variáveis //= igual a atribuição    	
        	int laco=1;
-       	char login[15] = "10";
-       	char login1[15];
-       	char senha[15] = "10";
+       	char usuario[15] = "admin";//variável usuário e Senha 
+       	char usuario1[15];
+       	char senha[15] = "admin";
        	char senha1[15];
+       	
+       	setlocale(LC_ALL,"Portuguese");//Definindo a linguagem
        	
        	printf("### Cartório da EBAC ###\n\n");
        	printf("Login de administrador!\n\n");
-		printf("Digite o seu login: ");
-		scanf("%s", login1);
-		printf ("Digite a sua senha: ");
+		printf("Digite o seu Usuário: ");
+		scanf("%s", usuario1);
+		printf ("Digite a sua Senha: ");
        	scanf("%s", senha1);
        	
-       	if(strcmp(login,login1) == 0 && strcmp(senha, senha1) == 0)
+       	if(strcmp(usuario,usuario1) == 0 && strcmp(senha, senha1) == 0)//Processo de Usuário e Senha do usuário //strcm = comparando string//
        	    
        	{
  
